@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduVerify - Home</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header { background-color: #fff; padding: 10px 20px; display: flex; align-items: center; }
+    header img { height: 140px; margin-right: 10px; }
+    nav { flex-grow: 1; }
+    nav a { color: #1F5AF6; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://uploads.onecompiler.io/43szjqugt/43tjean5g/Logo.png" alt="EduVerify Logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="application.html">Online Application</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  <img src="https://uploads.onecompiler.io/43szjqugt/43tjean5g/logo.png" 
+     alt="JNTUA Logo" 
+     style="width:60px; height:auto;">
+</header>
+
+
+<!-- Feedback Section -->
+<section style="background:#f0f4ff; padding:20px; margin-top:20px; border:1px solid #ccc; border-radius:8px;">
+  <h2>Feedback</h2>
+  <p>We value your input. Please share your feedback below. You can also contact us at
+    <a href="mailto:eduverify.helpdesk@gmail.com">eduverify.helpdesk@gmail.com</a>.
+  </p>
+
+  <form action="#" method="post" onsubmit="alert('Thanks for your feedback!'); return false;">
+    
+    <label>
+      Name*:
+      <input type="text" name="name" required 
+             style="margin-left:10px; padding:6px; width:100%; max-width:420px;">
+    </label><br><br>
+
+    <label>
+      Subject*:
+      <input type="text" name="subject" required 
+             placeholder="Feedback subject" 
+             style="margin-left:10px; padding:6px; width:100%; max-width:420px;">
+    </label><br><br>
+
+    <label>
+      Message*:
+      <textarea name="message" required rows="5" 
+                placeholder="Write your feedback here..."
+                style="display:block; margin-top:6px; padding:8px; width:100%; max-width:640px;"></textarea>
+    </label><br>
+
+    <button type="submit" 
+            style="margin-top:10px; padding:8px 16px; background:#4CAF50; color:#fff; border:none; border-radius:4px; cursor:pointer;">
+      Submit Feedback
+    </button>
+
+    <a href="mailto:eduverify.helpdesk@gmail.com"
+       style="margin-left:10px; padding:8px 16px; background:#0078d4; color:#fff; text-decoration:none; border-radius:4px;">
+      Email Helpdesk
+    </a>
+  </form>
+</section>
+
+<!-- Footer -->
+<main style="background-color: #1F5AF6; padding: 5px 20px; text-align: center; color: white;">
+  <footer>
+    &copy; 2025 EduVerify. All rights reserved.
+  </footer>
+</main>
+
+</body>
+</html>

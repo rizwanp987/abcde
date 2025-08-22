@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduVerify - Home</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header { background-color: #fff; padding: 10px 20px; display: flex; align-items: center; }
+    header img { height: 140px; margin-right: 10px; }
+    nav { flex-grow: 1; }
+    nav a { color: #1F5AF6; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://uploads.onecompiler.io/43szjqugt/43tjean5g/Logo.png" alt="EduVerify Logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="application.html">Online Application</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  <img src="https://uploads.onecompiler.io/43szjqugt/43tjean5g/logo.png" 
+     alt="JNTUA Logo" 
+     style="width:60px; height:auto;">
+</header>
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduVerify Applications</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4ff;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .form-container {
+      display: none; /* Hide forms initially */
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background: #f0f4ff;
+      border-radius: 8px;
+    }
+    fieldset {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    select, input {
+      margin-left: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>EduVerify Applications</h1>
+
+  <label for="applicationType"><b>Select Application Type:</b></label>
+  <select id="applicationType" onchange="showForm()">
+    <option value="">-- Select --</option>
+    <option value="certificate">Online Certificate Verification</option>
+    <option value="transcript">Online Transcript Application</option>
+  </select>
+
+  <!-- Certificate Verification Form -->
+  <div id="certificateForm" class="form-container">
+    <h2>Online Certificate Verification</h2>
+    <form onsubmit="return redirectToPayment('certificate')">
+      <!-- Requester Details -->
+      <fieldset>
+        <legend>Requester Details</legend>
+        <label>Requester Name*: 
+          <input type="text" name="firstName" placeholder="First Name" required>
+          <input type="text" name="lastName" placeholder="Last Name" required>
+        </label>
+        <label>Email Address*: 
+          <input type="email" name="email" placeholder="Email ID" required>
+        </label>
+        <label>Contact Number*: 
+          <span>+91</span><input type="tel" name="contact" placeholder="Contact Number" required>
+        </label>
+      </fieldset>
+
+      <!-- Student Details -->
+      <fieldset>
+        <legend>Student Details</legend>
+        <label>Student Name*: 
+          <input type="text" name="studentName" placeholder="Full Name of student" required>
+        </label>
+        <label>Date of Birth*: 
+          <select name="dobDay" required>
+            <option value="">Day</option>
+            <script>
+              for(let i=1; i<=31; i++){document.write(`<option value="${i}">${i}</option>`);}
+            </script>
+          </select>
+          <select name="dobMonth" required>
+            <option value="">Month</option>
+            <option>January</option><option>February</option><option>March</option>
+            <option>April</option><option>May</option><option>June</option>
+            <option>July</option><option>August</option><option>September</option>
+            <option>October</option><option>November</option><option>December</option>
+          </select>
+          <select name="dobYear" required>
+            <option value="">Year</option>
+            <script>
+              for(let y=new Date().getFullYear(); y>=1950; y--){document.write(`<option value="${y}">${y}</option>`);}
+            </script>
+          </select>
+        </label>
+        <label>Degree / Course Title*: 
+          <select name="degree" required>
+            <option>B.Tech</option><option>M.Tech</option><option>MBA</option>
+            <option>MCA</option><option>B.Phram</option><option>M.Phram</option>
+            <option>Phram.D</option><option>Phram.D (PB)</option><option>M.Sc</option><option>Ph.D</option>
+          </select>
+        </label>
+        <label>Field of Study*: 
+          <input type="text" name="fieldOfStudy" placeholder="E.g. Computer Science & Engineering" required>
+        </label>
+        <label>Year of Enrolment: 
+          <select name="enrolYear">
+            <option value="">Year</option>
+            <script>
+              for(let y=new Date().getFullYear(); y>=1980; y--){document.write(`<option value="${y}">${y}</option>`);}
+            </script>
+          </select>
+        </label>
+        <label>Month & Year of Graduation*: 
+          <select name="gradMonth" required>
+            <option value="">Month</option>
+            <option>January</option><option>February</option><option>March</option>
+            <option>April</option><option>May</option><option>June</option>
+            <option>July</option><option>August</option><option>September</option>
+            <option>October</option><option>November</option><option>December</option>
+          </select>
+          <select name="gradYear" required>
+            <option value="">Year</option>
+            <script>
+              for(let y=new Date().getFullYear(); y>=1980; y--){document.write(`<option value="${y}">${y}</option>`);}
+            </script>
+          </select>
+        </label>
+        <label>Hall Ticket / Admission Number*: 
+          <input type="text" name="hallTicket" required>
+        </label>
+        <label>Class Obtained: 
+          <select name="classObtained">
+            <option>First Class with Distinction</option>
+            <option>First Class</option>
+            <option>Second Class</option>
+            <option>Not Applicable</option>
+          </select>
+        </label>
+        <label>Upload Document*: 
+          <input type="file" name="degreeCertificate" accept=".pdf,.jpg,.png" required>
+        </label>
+        <label>Verification Requested By*: 
+          <select name="verificationRequestedBy" required>
+            <option value="">Select</option>
+            <option>Employer</option><option>Self</option><option>Government Agency</option>
+          </select>
+        </label>
+        <label>Student Hired By*: 
+          <input type="text" name="hiredBy" placeholder="Organisation Name" required>
+        </label>
+      </fieldset>
+
+      <p><b>Verification Price:</b> Rs.700.00 </p>
+
+      <label>
+        <input type="checkbox" name="terms" required>
+        I hereby authorize EduVerify to carry out the verification process on my behalf. 
+        I confirm that I have read and agree to EduVerify’s 
+        <a href="#">terms of use</a> & <a href="#">privacy policy</a>.
+      </label><br><br>
+
+      <button type="submit">Proceed to Payment</button>
+      <button type="reset">Cancel</button>
+    </form>
+  </div>
+  
+  <script>
+    function showForm() {
+      document.getElementById("certificateForm").style.display = "none";
+      document.getElementById("transcriptForm").style.display = "none";
+
+      let type = document.getElementById("applicationType").value;
+      if (type === "certificate") {
+        document.getElementById("certificateForm").style.display = "block";
+      } else if (type === "transcript") {
+        document.getElementById("transcriptForm").style.display = "block";
+      }
+    }
+
+    function redirectToPayment(type) {
+      if(type === "certificate"){
+        window.location.href = "https://rzp.io/l/your-certificate-payment-link";
+      } else if(type === "transcript"){
+        window.location.href = "https://rzp.io/l/your-transcript-payment-link";
+      }
+      return false; // prevent normal form submission
+    }
+  </script>
+
+  <!-- Transcript Application Form -->
+  <div id="transcriptForm" class="form-container">
+    <h2>Online Transcript Application</h2>
+    <form onsubmit="return redirectToPayment('transcript')">
+      <fieldset>
+        <legend>Student Details</legend>
+        <label>Hall Ticket No*: <input type="text" name="hallTicket" required></label>
+        <label>Student Name*: <input type="text" name="studentName" required></label>
+        <label>Program*: <input type="text" name="program" required></label>
+        <label>D. No: <input type="text" name="doorNo"></label>
+        <label>Street: <input type="text" name="street"></label>
+        <label>Place: <input type="text" name="place"></label>
+        <label>District: <input type="text" name="district"></label>
+        <label>State: <input type="text" name="state"></label>
+        <label>Pin Code: <input type="text" name="pinCode"></label>
+        <label>Contact No*: <input type="tel" name="contact" required></label>
+        <label>Email*: <input type="email" name="email" required></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Transcript Details</legend>
+        <table>
+          <tr>
+            <th>S.No</th><th>Particulars of Memo(s)</th><th>Month & Year</th><th>No. of Copies</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><input type="text" name="memo1"></td>
+            <td><input type="text" name="monthYear1"></td>
+            <td><input type="number" name="copies1" min="1"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><input type="text" name="memo2"></td>
+            <td><input type="text" name="monthYear2"></td>
+            <td><input type="number" name="copies2" min="1"></td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <p><b>Application Fee:</b> Rs.1500.00 </p>
+
+      <label>
+        <input type="checkbox" name="payment_terms" required>
+        I hereby confirm that the payment details provided are correct. 
+        I agree to proceed with the transaction and understand that the 
+        application will be processed only after successful payment. 
+        I also accept EduVerify’s <a href="#">terms of use</a> & <a href="#">privacy policy</a>.
+      </label><br><br>
+
+      <button type="submit">Proceed to Payment</button>
+      <button type="reset">Cancel</button>
+    </form>
+  </div>
+
+  <script>
+    function showForm() {
+      document.getElementById("certificateForm").style.display = "none";
+      document.getElementById("transcriptForm").style.display = "none";
+
+      let type = document.getElementById("applicationType").value;
+      if (type === "certificate") {
+        document.getElementById("certificateForm").style.display = "block";
+      } else if (type === "transcript") {
+        document.getElementById("transcriptForm").style.display = "block";
+      }
+    }
+
+    function redirectToPayment(type) {
+      if(type === "certificate"){
+        window.location.href = "https://rzp.io/l/your-certificate-payment-link";
+      } else if(type === "transcript"){
+        window.location.href = "https://rzp.io/l/your-transcript-payment-link";
+      }
+      return false; // prevent normal form submission
+    }
+  </script>
+
+</body>
+</html>
+
+<p style="margin-bottom: 300px;"></p>
+
+<!-- Footer -->
+<main style="background-color: #1F5AF6; padding: 5px 20px; text-align: center; color: white;">
+  <footer>
+    &copy; 2025 EduVerify. All rights reserved.
+  </footer>
+</main>
+</body>
+</html>
